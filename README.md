@@ -1,7 +1,13 @@
 # Capturing the Relationship Between Sentence Triplets for LLM and Human-Generated Texts to Enhance Sentence Embeddings
 
+## Summary
+Our proposed training objective, Positive-Negative Augmentation (PNA) loss, enables a sentence embedding model to learn the relationship between positives and negatives, unlike [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLHAIF](https://github.com/xiami2019/CLAIF). Note that PNA can be applied to any sentence embedding models trained with sentence triplets (references, positives, and negatives).
+
+![](figure/Figure2.png)
+
+
 ## Citation
-We developed our implementation using the source code from [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLAIF](https://github.com/xiami2019/CLAIF).
+We deeply appreciate the source code provided by [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLAIF](https://github.com/xiami2019/CLAIF). 
 ```bibtex
 @inproceedings{an-etal-2024-capturing,
     title = "Capturing the Relationship Between Sentence Triplets for {LLM} and Human-Generated Texts to Enhance Sentence Embeddings",
