@@ -1,10 +1,76 @@
 # Capturing the Relationship Between Sentence Triplets for LLM and Human-Generated Texts to Enhance Sentence Embeddings
+This is an official repository for implementing our [paper](https://aclanthology.org/2024.findings-eacl.43/), which was accepted to the Findings of EACL 2024.
 
 ## Summary
 Our proposed training objective, Positive-Negative Augmentation (PNA) loss, enables a sentence embedding model to learn the relationship between positives and negatives, unlike [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLHAIF](https://github.com/xiami2019/CLAIF). Note that PNA can be applied to any sentence embedding models trained with sentence triplets (references, positives, and negatives).
 
 ![](figure/Figure2.png)
 
+
+## Training
+Coming soon! 
+
+
+## Spearman Correlation Evaluation
+
+### SimCSE+PNA
+Coming soon! 
+
+### CLHAIF+PNA
+Clone [CLAIF](https://github.com/xiami2019/CLAIF) and run the following Input scripts:
+
+Input:
+
+```python
+python evaluation_clhaif.py \
+--model_name_or_path namin0202/pna-roberta-large \ 
+--pooler cls \
+--task_set full \
+--mode test
+```
+
+(Expected) Output:
+
+```python
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
+| STS12 | STS13 | STS14 | STS15 | STS16 | STSBenchmark | SICKRelatedness |  Avg. |
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
+| 77.02 | 86.59 | 83.04 | 87.03 | 83.21 |    85.54     |      79.20      | 83.09 |
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
++-------+-------+-------+-------+-------+-------+-------+-------+
+|   MR  |   CR  |  SUBJ |  MPQA |  SST2 |  TREC |  MRPC |  Avg. |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| 86.85 | 91.68 | 93.86 | 90.95 | 91.49 | 90.40 | 77.74 | 89.00 |
++-------+-------+-------+-------+-------+-------+-------+-------+
+```
+
+Input:
+
+```python
+python evaluation_clhaif.py \
+--model_name_or_path namin0202/pna-roberta-large \ 
+--pooler avg \
+--task_set full \
+--mode test
+```
+
+Output:
+
+```python
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
+| STS12 | STS13 | STS14 | STS15 | STS16 | STSBenchmark | SICKRelatedness |  Avg. |
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
+| 77.13 | 87.08 | 83.27 | 87.13 | 83.14 |    85.39     |      77.20      | 82.91 |
++-------+-------+-------+-------+-------+--------------+-----------------+-------+
++-------+-------+-------+-------+-------+-------+-------+-------+
+|   MR  |   CR  |  SUBJ |  MPQA |  SST2 |  TREC |  MRPC |  Avg. |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| 87.00 | 91.55 | 94.19 | 91.16 | 92.26 | 91.40 | 75.88 | 89.06 |
++-------+-------+-------+-------+-------+-------+-------+-------+
+```
+
+## Sentence Anisotropy Evaluation
+Coming soon!
 
 ## Citation
 We deeply appreciate the source code provided by [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLAIF](https://github.com/xiami2019/CLAIF). 
