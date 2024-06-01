@@ -10,14 +10,20 @@ Our proposed training objective, Positive-Negative Augmentation (PNA) loss, enab
 ## Training
 Coming soon! 
 
-
-## Spearman Correlation Evaluation
-
-### SimCSE+PNA
+## Evaluation (after training)
 Coming soon! 
 
+## Spearman Correlation Evaluation (Huggingface checkpoint)
+
+### SimCSE+PNA
+Coming soon!
+
+
 ### CLHAIF+PNA
-Clone [CLAIF](https://github.com/xiami2019/CLAIF) and run the following Input scripts:
+
+1. Clone [CLAIF](https://github.com/xiami2019/CLAIF).
+2. cd CLAIF
+3. Run the below Input scripts.
 
 Input:
 
@@ -69,8 +75,34 @@ Output:
 +-------+-------+-------+-------+-------+-------+-------+-------+
 ```
 
-## Sentence Anisotropy Evaluation
+## Sentence Anisotropy Evaluation (Huggingface checkpoint)
+
+1. Clone [SimCSE](https://github.com/princeton-nlp/SimCSE).
+2. cd SimCSE
+3. Change the original [evaluation.py](https://github.com/princeton-nlp/SimCSE/blob/main/evaluation.py) to new [evaluation.py](https://github.com/xfactlab/eacl2024-pna/blob/main/SimCSE/evaluation.py).
+4. Run the below Input scripts to reproduce Table 1 results.
+
+### SimCSE+PNA
+
 Coming soon!
+
+### CLHAIF+PNA
+
+Input:
+
+```python
+python evaluation.py \
+--model_name_or_path namin0202/pna-roberta-large \
+--pooler avg \
+--task_set sts \
+--mode test \
+--calc_anisotropy
+```
+
+Output:
+```python
+Avg. Cos: 0.3958740999659896
+```
 
 ## Citation
 We deeply appreciate the source code provided by [SimCSE](https://github.com/princeton-nlp/SimCSE) and [CLAIF](https://github.com/xiami2019/CLAIF). 
