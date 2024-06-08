@@ -23,11 +23,14 @@ if num_sent >= 3:
 1. Clone [SimCSE](https://github.com/princeton-nlp/SimCSE).
 2. cd [SimCSE](https://github.com/xfactlab/eacl2024-pna/blob/main/SimCSE)
 3. Change the original [models.py](https://github.com/princeton-nlp/SimCSE/blob/main/simcse/models.py) to new [models.py](https://github.com/xfactlab/eacl2024-pna/blob/main/SimCSE/simcse/models.py).
-5. bash run_sup_example.sh
+5. bash [run_sup_example.sh](https://github.com/princeton-nlp/SimCSE/blob/main/run_sup_example.sh)
 
 ### CLHAIF+PNA
 
-Coming soon! 
+1. Clone [CLAIF](https://github.com/xiami2019/CLAIF).
+2. cd [CLAIF](https://github.com/xiami2019/CLAIF)
+3. Change the original [models.py](https://github.com/xiami2019/CLAIF/blob/main/simcse/models.py) to new [models.py](https://github.com/xfactlab/eacl2024-pna/blob/main/CLAIF/simcse/models.py).
+4. bash [run_clhaif_simcse.sh](https://github.com/xiami2019/CLAIF/blob/main/run_clhaif_simcse.sh) (Set smooth_type to "smooth_all".)
 
 
 ## Spearman Correlation Evaluation
