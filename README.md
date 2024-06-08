@@ -44,7 +44,7 @@ if num_sent >= 3:
 Input:
 
 ```python
-python evaluation_clhaif.py \
+python evaluation.py \
 --model_name_or_path namin0202/pna-simcse-bert-base-uncased \ 
 --pooler avg \
 --task_set sts \
